@@ -43,21 +43,21 @@ const format = async (url) => {
    * TODO: transform images
    */
 
-  const cleanedAndFormatted = cleaned.map((item) => {
-    const vals = Object.values(item);
+  //   const cleanedAndFormatted = cleaned.map((item) => {
+  //     const vals = Object.values(item);
 
-    const transformed = vals.map((val) => {
-      if (val._type === "image") {
-        console.log(val);
-      }
+  //     const transformed = vals.map((val) => {
+  //       if (val._type === "image") {
+  //         console.log(val);
+  //       }
 
-      return val;
-    });
+  //       return val;
+  //     });
 
-    return transformed;
-  });
+  //     return transformed;
+  //   });
 
-  return cleaned;
+  //   return cleaned;
 };
 
 /**

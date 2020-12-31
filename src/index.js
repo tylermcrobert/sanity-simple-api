@@ -1,3 +1,9 @@
+/************************************************
+ *
+ * Formats a list of sanity
+ * documents for use in Figma
+ *
+ ************************************************/
 var http = require("http");
 const fetch = require("node-fetch");
 
@@ -5,6 +11,9 @@ const format = async (url) => {
   const result = await fetch(url);
   const data = await result.json();
 
+  /**
+   * Get each key in doc array
+   */
   const allKeys = data.result
     //
     .map((data) => Object.keys(data))
@@ -13,6 +22,9 @@ const format = async (url) => {
       return Array.from(set);
     }, []);
 
+  /**
+   * Fill in missing values
+   */
   const blankObj = allKeys.reduce(
     (acc, cur) => ({ ...acc, [cur]: "null" }),
     {}
@@ -24,6 +36,12 @@ const format = async (url) => {
   const cleaned = data.result.map((item) => {
     return { ...blankObj, ...item };
   });
+
+  /**
+   * Transform dates from ISO and images
+   * TODO: transform date
+   * TODO: transform images
+   */
 
   const cleanedAndFormatted = cleaned.map((item) => {
     const vals = Object.values(item);
@@ -41,6 +59,10 @@ const format = async (url) => {
 
   return cleaned;
 };
+
+/**
+ * Start server
+ */
 
 http
   .createServer(async function (req, res) {

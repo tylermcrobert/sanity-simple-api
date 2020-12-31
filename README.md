@@ -1,2 +1,2 @@
-# sanity-simple-api
+# sanity-simple-json
 Created with CodeSandbox

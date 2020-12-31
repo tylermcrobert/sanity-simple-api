@@ -1,0 +1,17 @@
+{
+  "name": "sanity-formatter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "node-fetch": "2.6.1",
+    "querystring": "0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
+}

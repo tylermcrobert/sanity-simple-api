@@ -18,6 +18,9 @@ const format = async (url) => {
     {}
   );
 
+  /**
+   * Include null vals
+   */
   const cleaned = data.result.map((item) => {
     return { ...blankObj, ...item };
   });
